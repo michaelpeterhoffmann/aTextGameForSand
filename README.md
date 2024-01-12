@@ -1,2 +1,2 @@
 # aTextGameForSand
-A Text Adventure writtne in C#
+A Text Adventure written in C#
