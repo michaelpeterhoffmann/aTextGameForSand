@@ -1,4 +1,5 @@
 using System;
+using System.Text.RegularExpressions;
 
 namespace TextAdventure
 {
@@ -18,7 +19,16 @@ namespace TextAdventure
                 Console.Write("\nWhat would you like to do now?\n> ");
                 string input = Console.ReadLine();
 
-                Console.WriteLine($"Sorry, I dont know what you mean with \"{input}\"...");
+                Match match = Regex.Match(input,"(.*)yolo(.*)");
+                if (match.Success)
+                {
+                    Console.WriteLine($"Thanks: You wrote {match.Groups[1]} and then {match.Groups[2]}");
+                }
+                else
+                {
+                    Console.WriteLine($"Sorry, I dont know what you mean with \"{input}\"...");
+                }
+                
             }
 
         }
